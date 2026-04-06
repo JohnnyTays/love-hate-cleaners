@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love & Hate Cleaners | Yard & Home Cleaning Services</title>
+  <meta name="description" content="Professional yard cleaning and home cleaning services. Half payment upfront, half after completion. Free estimates available.">
+  <meta property="og:title" content="Love & Hate Cleaners | Yard & Home Cleaning">
+  <meta property="og:description" content="Professional yard cleaning and home cleaning. Half payment upfront, half after completion.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1E3A8A;
+      --blue-light: #2563EB;
+      --blue-dark: #1E2A5A;
+      --gold: #FBBF24;
+      --gold-light: #FCD34D;
+      --gold-dark: #D97706;
+      --white: #FFFFFF;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-600: #4B5563;
+      --gray-800: #1F2937;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--gray-800);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    a { text-decoration: none; transition: color 0.3s; }
+
+    /* Nav */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--blue);
+      padding: 1rem 2rem;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 12px rgba(30, 58, 138, 0.3);
+    }
+
+    .nav-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--white);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-logo .paw { font-size: 1rem; margin-right: 4px; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0.9rem 1.2rem; }
+      .nav-links { display: none; }
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, var(--blue-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 750px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(251, 191, 36, 0.2);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 550px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--blue-dark);
+      padding: 1rem 2.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      border-radius: 6px;
+      border: 2px solid rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Cougar Paw Divider */
+    .paw-divider {
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      color: var(--gold);
+      opacity: 0.6;
+      letter-spacing: 0.5rem;
+    }
+
+    /* Services */
+    .services {
+      padding: 5rem 2rem;
+      background: var(--gray-50);
+    }
+
+    .section-center {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--blue-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      color: var(--gray-600);
+      font-size: 1.05rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      border: 2px solid var(--gray-200);
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(30, 58, 138, 0.1);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      color: var(--blue-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* Pricing Banner */
+    .pricing-banner {
+      background: var(--blue);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .pricing-banner h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .pricing-banner h2 span { color: var(--gold); }
+
+    .pricing-items {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .pricing-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .pricing-item .check {
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--blue-dark);
+      font-weight: 700;
+    }
+
+    /* Testimonial */
+    .testimonial {
+      padding: 4rem 2rem;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .testimonial blockquote {
+      font-size: 1.2rem;
+      color: var(--gray-600);
+      max-width: 650px;
+      margin: 0 auto 1.5rem;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .testimonial-author {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    /* Contact / Form */
+    .contact {
+      padding: 5rem 2rem;
+      background: var(--gray-50);
+    }
+
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      color: var(--blue-dark);
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact .section-subtitle {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .booking-form {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      border: 2px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 6px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      color: var(--gray-800);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .booking-form input:focus,
+    .booking-form select:focus,
+    .booking-form textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .booking-form input::placeholder,
+    .booking-form textarea::placeholder {
+      color: var(--gray-600);
+    }
+
+    .booking-form select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231E3A8A' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .booking-form select option { background: var(--white); }
+
+    .booking-form textarea { resize: vertical; min-height: 100px; }
+
+    .booking-form .cta-button {
+      width: 100%;
+      padding: 1rem;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .booking-form .cta-button:hover {
+      background: var(--blue-light);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 500px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* Footer */
+    footer {
+      background: var(--blue-dark);
+      padding: 2rem;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    footer .paw-footer { color: var(--gold); font-size: 1.1rem; }
+
+    /* Paw print watermark in hero */
+    .hero .watermark {
+      position: absolute;
+      bottom: -40px;
+      right: -20px;
+      font-size: 12rem;
+      color: rgba(255,255,255,0.04);
+      pointer-events: none;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo"><span class="paw">🐆</span>Love <span>&</span> Hate Cleaners</div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🐆 Cougar Pride Cleaning</div>
+      <h1>Love <span>&</span> Hate <span>Cleaners</span></h1>
+      <div class="hero-sub">Yard Cleaning & Home Cleaning</div>
+      <p>We tackle the mess so you don't have to. From overgrown yards to full home cleanouts, we leave every property spotless. Serving the community with pride.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+        <a href="#services" class="btn-secondary">Our Services</a>
+      </div>
+    </div>
+    <div class="watermark">🐆</div>
+  </section>
+
+  <div class="paw-divider">🐾 🐾 🐾</div>
+
+  <section class="services" id="services">
+    <div class="section-center">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Professional cleaning for every part of your property</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🌿</div>
+        <h3>Yard Cleanup</h3>
+        <p>Overgrown lawns, leaf removal, debris clearing, hedge trimming, and full yard restoration. We make your outdoor space look great again.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Inside Cleaning</h3>
+        <p>Deep home cleaning, move-in/move-out cleans, and regular maintenance. Every room, every surface, spotless results.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>Full Property Cleanouts</h3>
+        <p>Complete property cleanouts including garages, sheds, and post-construction cleanup. No job too big or too dirty.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-banner" id="pricing">
+    <div class="section-center" style="color:white;">
+      <div class="section-label" style="color:var(--gold);">Simple & Fair</div>
+      <h2>How <span>Pricing</span> Works</h2>
+    </div>
+    <div class="pricing-items">
+      <div class="pricing-item">
+        <div class="check">✓</div>
+        <span>Price varies by size of mess</span>
+      </div>
+      <div class="pricing-item">
+        <div class="check">✓</div>
+        <span>Half payment upfront</span>
+      </div>
+      <div class="pricing-item">
+        <div class="check">✓</div>
+        <span>Half after completion</span>
+      </div>
+    </div>
+    <p style="margin-top:2rem; color:rgba(255,255,255,0.75); font-size:1rem;">Free estimates available. No surprises, no hidden fees.</p>
+  </section>
+
+  <section class="testimonial">
+    <div class="section-center">
+      <div class="section-label">Why Us</div>
+      <h2 class="section-title">Built on Cougar Pride</h2>
+    </div>
+    <blockquote>"We treat every property like it's our own home. Show up on time, do the job right, and make sure you love the result."</blockquote>
+    <div class="testimonial-author">— Love & Hate Cleaners</div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="section-center">
+        <div class="section-label">Ready?</div>
+        <h2 class="section-title">Book Your Cleaning</h2>
+        <p class="section-subtitle">Fill out the form and we'll get back to you with a free estimate.</p>
+      </div>
+      <form action="https://formsubmit.co/YOUR_EMAIL_HERE@email.com" method="POST" class="booking-form">
+        <input type="hidden" name="_subject" value="New Booking Request - Love & Hate Cleaners">
+        <input type="hidden" name="_next" value="https://johnnytays.github.io/love-hate-cleaners/?booked=1">
+        <div class="form-row">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="tel" name="Phone" placeholder="Phone Number" required>
+        </div>
+        <select name="Service Type" required>
+          <option value="" disabled selected>Select Service Type</option>
+          <option>Yard Cleanup</option>
+          <option>Inside Cleaning</option>
+          <option>Full Property Cleanout</option>
+          <option>Other / Not Sure</option>
+        </select>
+        <input type="text" name="Address" placeholder="Property Address">
+        <textarea name="Message" placeholder="Tell us about the job — size of yard, type of mess, any special requests..." rows="4"></textarea>
+        <button type="submit" class="cta-button">Request Free Estimate</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p><span class="paw-footer">🐆</span> © 2026 Love & Hate Cleaners · Serving the Community</p>
+  </footer>
+</body>
+</html>
