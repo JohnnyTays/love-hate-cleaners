@@ -490,6 +490,35 @@
 
     footer .paw-footer { color: var(--gold); font-size: 1.1rem; }
 
+    /* About Owner Section */
+    .about-owner {
+      padding: 5rem 2rem;
+      background: var(--white);
+    }
+    .about-owner-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .about-owner-text { flex: 1; }
+    .about-owner-text .section-title { text-align: left; margin-bottom: 1rem; }
+    .about-owner-text p { color: var(--gray-600); line-height: 1.75; font-size: 1.05rem; }
+    .about-owner-img {
+      width: 350px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      border: 3px solid var(--gold);
+      box-shadow: 0 6px 24px rgba(30,58,138,0.12);
+      object-fit: cover;
+    }
+    @media (max-width: 768px) {
+      .about-owner-inner { flex-direction: column; }
+      .about-owner-img { width: 100%; }
+      .about-owner-text .section-title { text-align: center; }
+    }
+
     /* Paw print watermark in hero */
     .hero .watermark {
       position: absolute;
@@ -610,6 +639,17 @@
         <textarea name="Message" placeholder="Tell us about the job — size of yard, type of mess, any special requests..." rows="4"></textarea>
         <button type="submit" class="cta-button">Request Free Estimate</button>
       </form>
+    </div>
+  </section>
+
+  <section class="about-owner">
+    <div class="about-owner-inner">
+      <div class="about-owner-text">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title">We Show Up and Get It Done</h2>
+        <p>Every cleaning job is handled personally. We show up on time, do the work right, and make sure you love the result. No subcontractors cutting corners. Just honest work from someone who cares about the property and the people on it.</p>
+      </div>
+      <img src="owner-photo.jpg" alt="Love & Hate Cleaners - Owner" class="about-owner-img">
     </div>
   </section>
 
