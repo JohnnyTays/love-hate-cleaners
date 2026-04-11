@@ -236,6 +236,26 @@
     }
 
     /* Services */
+    .video-section {
+      padding: 4rem 2rem;
+      background: var(--white);
+    }
+    .video-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .video-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(30,58,138,0.15);
+      background: #000;
+    }
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+      max-height: 500px;
+    }
     .services {
       padding: 5rem 2rem;
       background: var(--gray-50);
@@ -562,6 +582,21 @@
   </section>
 
   <div class="paw-divider">🐾 🐾 🐾</div>
+
+  <section class="video-section" id="video">
+    <div class="video-inner">
+      <div class="section-center">
+        <div class="section-label">See It In Action</div>
+        <h2 class="section-title">Love & Hate Cleaners at Work</h2>
+      </div>
+      <div class="video-wrapper">
+        <video controls autoplay muted loop playsinline>
+          <source src="promo-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
 
   <section class="services" id="services">
     <div class="section-center">
