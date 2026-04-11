@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Plan — Love & Hate Cleaners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1E3A8A;
+      --blue-dark: #0F1D42;
+      --blue-light: #2563EB;
+      --gold: #FBBF24;
+      --gold-light: #FCD34D;
+      --white: #FFFFFF;
+      --gray-light: #F8FAFC;
+      --gray: #64748B;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--gray-light);
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--blue-dark);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+    nav .nav-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+    nav .nav-logo span { color: var(--white); }
+    nav .nav-links { display: flex; gap: 2rem; list-style: none; }
+    nav .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav .nav-links a:hover { color: var(--gold); }
+    nav .nav-links .btn-nav {
+      background: var(--gold);
+      color: var(--blue-dark);
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    nav .nav-links .btn-nav:hover { background: var(--gold-light); }
+
+    .hero-plan {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, var(--blue-light) 100%);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-plan::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-plan .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+    .hero-plan .plan-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .hero-plan h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .hero-plan h1 span { color: var(--gold); }
+    .hero-plan .owner-tag {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 1rem;
+    }
+    .hero-plan .owner-tag strong { color: var(--gold); }
+    .hero-plan .school-tag {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: rgba(251,191,36,0.15);
+      border: 1px solid var(--gold);
+      border-radius: 50px;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .back-link {
+      max-width: 900px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+    }
+    .back-link a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .back-link a:hover { text-decoration: underline; }
+
+    .plan-content {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .plan-section {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(30,58,138,0.08);
+      border: 1px solid rgba(30,58,138,0.06);
+    }
+
+    .plan-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .plan-section h2 .icon { font-size: 1.5rem; }
+
+    .plan-section h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin: 1.8rem 0 0.8rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--gold);
+    }
+
+    .plan-section p {
+      color: #334155;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .plan-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .plan-section ul li {
+      padding: 0.5rem 0;
+      color: #334155;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .plan-section ul li::before {
+      content: '✔';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+    .info-card {
+      background: var(--gray-light);
+      border-radius: 10px;
+      padding: 1.2rem;
+      border: 1px solid rgba(30,58,138,0.08);
+    }
+    .info-card .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gray);
+      margin-bottom: 0.3rem;
+    }
+    .info-card .value {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--blue-dark);
+      font-size: 1rem;
+    }
+
+    .division-card {
+      background: var(--gray-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(30,58,138,0.08);
+    }
+    .division-card h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      color: var(--blue);
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .equipment-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .equipment-list li {
+      background: var(--white);
+      padding: 0.5rem 0.8rem !important;
+      border-radius: 6px;
+      font-size: 0.88rem !important;
+      border: 1px solid rgba(30,58,138,0.06) !important;
+    }
+    .equipment-list li::before { content: '🔧' !important; }
+
+    table.pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    table.pricing-table th {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 0.9rem 1rem;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    table.pricing-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    table.pricing-table tr:nth-child(even) td { background: var(--gray-light); }
+    table.pricing-table td:last-child {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .tagline-list { list-style: none; padding: 0; }
+    .tagline-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .tagline-list li::before { display: none; }
+    .tagline-list .rank {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--gold);
+      min-width: 50px;
+    }
+    .tagline-list .tagline-text {
+      font-weight: 600;
+      color: var(--blue-dark);
+      font-size: 1rem;
+    }
+
+    .goal-steps {
+      counter-reset: goals;
+      list-style: none;
+      padding: 0;
+    }
+    .goal-steps li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 0.8rem 0;
+      counter-increment: goals;
+    }
+    .goal-steps li::before {
+      content: counter(goals);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      background: var(--gold);
+      color: var(--blue-dark);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .citation-box {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-top: 3rem;
+      text-align: center;
+      color: var(--white);
+    }
+    .citation-box .cite-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .citation-box h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+    }
+    .citation-box h3 span { color: var(--gold); }
+    .citation-box p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .citation-box .url-badge {
+      display: inline-block;
+      background: rgba(251,191,36,0.15);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.8rem 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .disclaimer {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .disclaimer-box {
+      background: rgba(30,58,138,0.05);
+      border: 1px dashed rgba(30,58,138,0.2);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      color: #64748B;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .disclaimer-box strong { color: var(--blue); }
+
+    footer {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+    }
+    footer .site-url { color: var(--gold); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .hero-plan h1 { font-size: 2rem; }
+      nav .nav-links { display: none; }
+      .equipment-list { grid-template-columns: 1fr; }
+      .plan-section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">LOVE <span>&</span> HATE <span style="color:rgba(255,255,255,0.5);font-weight:600">CLEANERS</span></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Main Site</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#divisions">Divisions</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#marketing">Marketing</a></li>
+    <li><a href="#goals">Vision</a></li>
+  </ul>
+</nav>
+
+<section class="hero-plan">
+  <div class="hero-content">
+    <div class="plan-label">📋 Business Plan</div>
+    <h1>LOVE & HATE <span>CLEANERS</span></h1>
+    <p class="owner-tag">Prepared by <strong>Lamar Chisolm</strong> — Senior, E-Commerce Class</p>
+    <div class="school-tag">🐆 Casa Grande Union High School — Cougars | Blue & Gold</div>
+  </div>
+</section>
+
+<div class="back-link">
+  <a href="index.html">← Back to main site</a>
+</div>
+
+<main class="plan-content">
+
+  <!-- OVERVIEW -->
+  <div class="plan-section" id="overview">
+    <h2><span class="icon">🏢</span> Business Overview</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Owner</div>
+        <div class="value">Lamar Chisolm</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Business Type</div>
+        <div class="value">Sole Proprietor / Student Entrepreneur</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Location</div>
+        <div class="value">Casa Grande, Arizona</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Year Founded</div>
+        <div class="value">2026</div>
+      </div>
+    </div>
+    <p style="margin-top: 1.5rem;">
+      Love & Hate Cleaners is a property cleaning service targeting homeowners, renters, and landlords who need reliable, affordable help keeping their properties clean — inside and out. The name says it all: <strong>we love getting it done, and we hate the mess just as much as you do.</strong>
+    </p>
+  </div>
+
+  <!-- TAGLINES -->
+  <div class="plan-section" id="taglines">
+    <h2><span class="icon">💡</span> Taglines</h2>
+    <ul class="tagline-list">
+      <li>
+        <span class="rank">⭐ #1</span>
+        <span class="tagline-text">"We Hate the Mess So You Don't Have To"</span>
+      </li>
+      <li>
+        <span class="rank">🥈 #2</span>
+        <span class="tagline-text">"Love the Results. Hate the Mess. That's Our Job."</span>
+      </li>
+      <li>
+        <span class="rank">🥉 #3</span>
+        <span class="tagline-text">"From Overgrown to Outstanding — Every Time"</span>
+      </li>
+      <li>
+        <span class="rank">4</span>
+        <span class="tagline-text">"Spotless Properties. Zero Excuses."</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- TWO DIVISIONS -->
+  <div class="plan-section" id="divisions">
+    <h2><span class="icon">⚠️</span> Two-Division Structure</h2>
+    <p>One of the smartest things about this business is recognizing that it actually operates as two separate service divisions — because the logistics, tools, and customers are different enough to treat them independently.</p>
+
+    <h3>🌿 Division 1 — Outdoor / Yard Services</h3>
+    <div class="division-card">
+      <p>Lawn cleanup, leaf removal, hedge trimming, debris hauling, yard restoration, post-construction outdoor cleanup.</p>
+      <h4>Equipment Needed</h4>
+      <ul class="equipment-list">
+        <li>Lawn mower / weed trimmer</li>
+        <li>Leaf blower</li>
+        <li>Hedge clippers</li>
+        <li>Rakes, tarps, hauling bags</li>
+        <li>Truck or trailer for debris</li>
+      </ul>
+      <h4 style="margin-top:1rem;">Who the Customer Is</h4>
+      <ul>
+        <li>Homeowners who don't have time or physical ability to maintain their yard</li>
+        <li>Landlords with rental properties between tenants</li>
+        <li>Homeowners prepping to sell (curb appeal)</li>
+        <li>HOA-compliant neighborhoods with seasonal cleanup needs</li>
+      </ul>
+    </div>
+
+    <h3>🏠 Division 2 — Indoor / Home Cleaning Services</h3>
+    <div class="division-card">
+      <p>Deep cleaning, move-in/move-out cleans, regular maintenance cleaning, garage cleanouts, post-construction interior cleanup.</p>
+      <h4>Equipment Needed</h4>
+      <ul class="equipment-list">
+        <li>Cleaning supplies (mops, vacuums, surface cleaners)</li>
+        <li>Microfiber cloths & scrub brushes</li>
+        <li>Disinfectants</li>
+        <li>Trash bags & organizing bins</li>
+      </ul>
+      <h4 style="margin-top:1rem;">Who the Customer Is</h4>
+      <ul>
+        <li>Renters moving in or out of apartments/homes</li>
+        <li>Homeowners preparing for guests or events</li>
+        <li>Property managers turning over rental units</li>
+        <li>Families needing one-time deep cleans</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="plan-section" id="pricing">
+    <h2><span class="icon">💰</span> Revenue Model & Pricing</h2>
+    <p>Payment structure: <strong>Half payment upfront, half upon completion.</strong> Free estimates available before any commitment.</p>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Service Type</th>
+          <th>Estimated Starting Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Basic Yard Cleanup (small)</td><td>$75 – $150</td></tr>
+        <tr><td>Full Yard Restoration</td><td>$200 – $400</td></tr>
+        <tr><td>Inside Home Cleaning (1–2 bedroom)</td><td>$80 – $150</td></tr>
+        <tr><td>Move-In / Move-Out Clean</td><td>$150 – $300</td></tr>
+        <tr><td>Full Property Cleanout</td><td>$250 – $500+</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MARKETING -->
+  <div class="plan-section" id="marketing">
+    <h2><span class="icon">📣</span> Marketing Strategy</h2>
+    <ul>
+      <li>Word of mouth — neighbors, family friends, church community</li>
+      <li>Social media — post before/after photos on Instagram and Facebook</li>
+      <li>Website — live and accessible for all customers</li>
+      <li>Flyers — distribute in neighborhoods and apartment complexes</li>
+      <li>Referral program — discount for customers who refer new clients</li>
+    </ul>
+  </div>
+
+  <!-- GOALS -->
+  <div class="plan-section" id="goals">
+    <h2><span class="icon">🏁</span> Vision for the Future</h2>
+    <p>As the business grows, the plan is to:</p>
+    <ol class="goal-steps">
+      <li>Separate the two divisions into officially branded sub-services</li>
+      <li>Hire 1–2 helpers per division to scale operations</li>
+      <li>Build a repeat client base with monthly and bi-weekly cleaning contracts</li>
+    </ol>
+  </div>
+
+  <!-- CITATION -->
+  <div class="citation-box" id="cite">
+    <div class="cite-label">🔗 Citation URL</div>
+    <h3>View the complete live website at<br><span>johnnytays.github.io/love-hate-cleaners</span></h3>
+    <p>This is the URL to cite for Love & Hate Cleaners. The full business plan and live service offerings are available at this address.</p>
+    <div class="url-badge">johnnytays.github.io/love-hate-cleaners</div>
+  </div>
+
+</main>
+
+<div class="disclaimer">
+  <div class="disclaimer-box">
+    <strong>Disclaimer:</strong> This website and business plan were created for a class project at <strong>Casa Grande Union High School</strong>. All services, pricing, and business information are for educational purposes only. This is not a functioning commercial business at this time.
+  </div>
+</div>
+
+<footer>
+  <p>Love & Hate Cleaners — A student entrepreneurship project. View the live site at <span class="site-url">johnnytays.github.io/love-hate-cleaners</span></p>
+</footer>
+
+</body>
+</html>
