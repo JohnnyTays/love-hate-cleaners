@@ -538,9 +538,14 @@
       object-fit: cover;
     }
     @media (max-width: 768px) {
-      .about-owner-inner { flex-direction: column; }
+      .about-owner-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
       .about-owner-img { width: 100%; }
       .about-owner-text .section-title { text-align: center; }
+      .about-owner-photo-wrap { align-items: center; }
     }
 
     /* Paw print watermark in hero */
@@ -691,7 +696,10 @@
       </div>
       <div class="about-owner-photo-wrap">
         <img src="owner-photo.jpg" alt="Love & Hate Cleaners - Owner" class="about-owner-img">
-        <div class="about-owner-caption">Founder & Owner Operator<br><strong>Lamar Chisolm</strong></div>
+        <div class="about-owner-caption">
+          <div style="font-size:0.8rem;color:var(--gray);font-weight:600;margin-bottom:0.2rem;">Founder &amp; Owner Operator</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--blue-dark);font-size:1.1rem;">Lamar Chisolm</div>
+        </div>
       </div>
     </div>
   </section>
